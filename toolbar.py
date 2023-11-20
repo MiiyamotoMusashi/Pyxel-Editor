@@ -1,16 +1,15 @@
-import select
 from PySide6.QtWidgets import QToolBar
 from PySide6.QtGui import QIcon, QAction, QActionEvent
-from PySide6.QtCore import QSize, Slot, Qt
+from PySide6.QtCore import QSize, Slot
 
 class Pencil(QAction):
-    def __init__(self):
+    def __init__(self, parent, func):
         super().__init__()
         self.selected = False
     
         self.setIcon(QIcon("C:\\Users\\ferna\\OneDrive\\Área de Trabalho\\Programação\\PixelEditor\\icons\\pencil.png"))
         self.setToolTip("Desenha um pixel na tela")
-        self.triggered.connect(select)
+        self.triggered.connect(func)
         
     @Slot()
     def select(self):
@@ -46,6 +45,9 @@ class ColorPicker(QAction):
         self.selected = True
 
 class ToolBar(QToolBar):
+    """
+    TODO: Fazer com que só seja possível utilizar uma ferramenta se ela estiver selecionada
+    """
     def __init__(self, parent = None):
         super().__init__(parent)
         
@@ -57,11 +59,11 @@ class ToolBar(QToolBar):
         
         pencil = Pencil(self, Pencil.select) # type: ignore
         eraser = Eraser(self, Eraser.select)
-        color_picker = ColorPicker(self, ColorPicker.select)
+        colorPicker = ColorPicker(self, ColorPicker.select)
         
         self.addAction(pencil) # Adiciono à barra de ferramentas o lápis
         self.addAction(eraser) # Adiciono à barra de ferramentas a borracha
-        self.addAction(color_picker) # Adiciono à barra de ferramentas o color picker
+        self.addAction(colorPicker) # Adiciono à barra de ferramentas o color picker
                 
     # def tool(self, event):
     #     actualTool = event.__name__()

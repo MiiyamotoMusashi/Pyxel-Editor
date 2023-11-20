@@ -15,13 +15,12 @@ class MainWindow(QMainWindow):
         
         self.InitUI() # Chamo o construtor da UI no construtor da função para a UI ser construída sem preciar chamar a função depois de instanciar a classe
         
-    def InitUI(self):        
+    def InitUI(self):
         self.resize(QApplication.primaryScreen().size().width(), QApplication.primaryScreen().size().height()) # Redimensiono a janela
         self.setWindowTitle("Sprite Editor") # Título da janela
         self.drawArea = QHBoxLayout() # Crio o layout para a area de desenho
         
-        pencil = Pencil()
-        drawBoard = DrawBoard(pencil)
+        drawBoard = DrawBoard()
         self.drawArea.addWidget(drawBoard)
         
         drawBoardContainer = QWidget()

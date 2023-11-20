@@ -3,7 +3,7 @@ from PySide6.QtGui import QAction
 
 class FileMenu(QMenu):
     def __init__(self, parent):
-        super().__init__()
+        super().__init__(parent)
         
         self.setTitle("File")
         
@@ -32,6 +32,9 @@ class SaveAs(QAction):
         self.setText("Save As")
         
 class MenuBar(QMenuBar):
+    """
+    Todo: Colocar uma opção de alterar a fonte do programa
+    """
     def __init__(self, parent = None):
         super().__init__(parent)
         

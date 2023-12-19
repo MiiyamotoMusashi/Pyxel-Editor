@@ -1,6 +1,6 @@
 <h1 align="center"> Pyxel Editor </h1>
 <p align="center">
-<img loading="lazy" src="https://img.shields.io/badge/Status-icomplete-yellow"/>
+<img loading="lazy" src="https://img.shields.io/badge/Status-incomplete-red"/>
 <img loading="lazy" src="https://img.shields.io/badge/PySide6-blue"/>
 </p>
 

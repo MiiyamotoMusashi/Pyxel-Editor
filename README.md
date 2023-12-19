@@ -1,4 +1,8 @@
-# Sprite Editor
+<h1 align="center"> Pyxel Editor </h1>
+<p align="center">
+<img loading="lazy" src="https://img.shields.io/badge/Status-icomplete-yellow"/>
+<img loading="lazy" src="https://img.shields.io/badge/PySide6-blue"/>
+</p>
 
 ## Overview
 This project is a sprite editor built with Python and PySide6. It provides a simple and intuitive interface for creating and editing sprite-based artwork.
